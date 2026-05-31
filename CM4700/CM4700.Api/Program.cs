@@ -3,6 +3,7 @@ using CM4700.Api.Repository;
 using CM4700.Api.Repository.Interfaces;
 using FluentValidation;
 using Microsoft.EntityFrameworkCore;
+using Scalar.AspNetCore;
 
 namespace CM4700.Api
 {
@@ -21,6 +22,7 @@ namespace CM4700.Api
                 options.UseSqlServer(connectionString));
 
             builder.Services.AddScoped<IScanRepository, ScanRepository>();
+            builder.Services.AddScoped<IBaselineAccessibilityScanner, BaselineAccessibilityScanner>();
 
             builder.Services.AddControllers();
 
@@ -33,6 +35,7 @@ namespace CM4700.Api
             if (app.Environment.IsDevelopment())
             {
                 app.MapOpenApi();
+                app.MapScalarApiReference();
             }
 
             app.UseHttpsRedirection();

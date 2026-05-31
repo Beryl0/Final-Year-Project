@@ -14,15 +14,18 @@ namespace CM4700.Api.Controllers
     public class ScanController : ControllerBase
     {
         private readonly IScanRepository _scanRepository;
+        private readonly IBaselineAccessibilityScanner _baselineAccessibilityScanner;
         private readonly IValidator<CreateScanRequest> _createScanRequestValidator;
         private readonly IValidator<UpdateScanRequest> _updateScanRequestValidator;
 
         public ScanController(
             IScanRepository scanRepository,
+            IBaselineAccessibilityScanner baselineAccessibilityScanner,
             IValidator<CreateScanRequest> createScanRequestValidator,
             IValidator<UpdateScanRequest> updateScanRequestValidator)
         {
             _scanRepository = scanRepository;
+            _baselineAccessibilityScanner = baselineAccessibilityScanner;
             _createScanRequestValidator = createScanRequestValidator;
             _updateScanRequestValidator = updateScanRequestValidator;
         }
@@ -65,7 +68,10 @@ namespace CM4700.Api.Controllers
 
             Uri url = new(request.Url);
             int scanRequestId = await _scanRepository.CreateScanRequestAsync(url);
-            return CreatedAtAction(nameof(GetScanRequestByIdAsync), new { id = scanRequestId }, scanRequestId);
+            IReadOnlyCollection<BaselineFinding> baselineFindings = await _baselineAccessibilityScanner.ScanAsync(scanRequestId, url.ToString());
+            await _scanRepository.AddBaselineFindingsAsync(baselineFindings);
+
+            return CreatedAtRoute(new { id = scanRequestId }, scanRequestId);
         }
 
         [HttpPut("{id}")]
@@ -86,8 +92,8 @@ namespace CM4700.Api.Controllers
             {
                 Id = id,
                 Url = url,
-                IsCompleted = request.IsCompleted,
-                DateTimeCompleted = request.DateTimeCompleted
+                BaselineScanIsCompleted = request.IsCompleted,
+                BaselineScanDateTimeCompleted = request.DateTimeCompleted
             };
 
             bool updated = await _scanRepository.UpdateScanRequestAsync(id, scanRequest);
@@ -121,8 +127,10 @@ namespace CM4700.Api.Controllers
                 Id = scanRequest.Id,
                 Url = scanRequest.Url,
                 DateTimeCreated = scanRequest.DateTimeCreated,
-                IsCompleted = scanRequest.IsCompleted,
-                DateTimeCompleted = scanRequest.DateTimeCompleted
+                BaselineScanIsCompleted = scanRequest.BaselineScanIsCompleted,
+                BaselineScanDateTimeCompleted = scanRequest.BaselineScanDateTimeCompleted,
+                AIScanDateTimeCompleted = scanRequest.BaselineScanDateTimeCompleted,
+                AIScanIsCompleted = scanRequest.AIScanIsCompleted
             };
         }
     }

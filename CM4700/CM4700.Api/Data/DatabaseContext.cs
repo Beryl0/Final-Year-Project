@@ -5,6 +5,7 @@ namespace CM4700.Api.Data
     public class DatabaseContext(DbContextOptions<DatabaseContext> options) : DbContext(options)
     {
         public DbSet<ScanRequest> ScanRequests => Set<ScanRequest>();
+        public DbSet<BaselineFinding> BaselineFindings => Set<BaselineFinding>();
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -27,11 +28,11 @@ namespace CM4700.Api.Data
                     .IsRequired()
                     .HasDefaultValueSql("SYSUTCDATETIME()");
 
-                entity.Property(scanRequest => scanRequest.IsCompleted)
+                entity.Property(scanRequest => scanRequest.BaselineScanIsCompleted)
                     .IsRequired()
                     .HasDefaultValue(false);
 
-                entity.Property(scanRequest => scanRequest.DateTimeCompleted);
+                entity.Property(scanRequest => scanRequest.BaselineScanDateTimeCompleted);
             });
         }
     }
