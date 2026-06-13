@@ -38,6 +38,18 @@ namespace CM4700.Api.Repository
             await _databaseContext.SaveChangesAsync();
         }
 
+        public async Task AddAiFindingsAsync(IEnumerable<AiFinding> aiFindings)
+        {
+            List<AiFinding> findings = aiFindings.ToList();
+            if (findings.Count == 0)
+            {
+                return;
+            }
+
+            await _databaseContext.AiFindings.AddRangeAsync(findings);
+            await _databaseContext.SaveChangesAsync();
+        }
+
         public async Task<IEnumerable<ScanRequest>> GetAllScanRequestsAsync()
         {
             return await _databaseContext.ScanRequests.ToListAsync();
