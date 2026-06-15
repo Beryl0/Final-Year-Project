@@ -2,28 +2,76 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Mock Accessibility Page 04 - Review decorative and context dependent</title>
+  <title>Mock Accessibility Page 05 - Severe combined issues</title>
 </head>
 <body>
+<!--
+Mock page purpose:
+- Combines multiple issue types in one page.
+- Includes missing alt, empty alt, generic alt, filename-like alt, misleading alt and generic headings.
+- This page should produce the highest number of findings.
+
+Wording/source basis:
+- Council service categories adapted from:
+  https://www.aberdeenshire.gov.uk/all-services
+  Used for: bins, roads, schools, housing, council tax and Live Life Aberdeenshire service categories.
+- Household bin collection wording adapted from:
+  https://www.aberdeenshire.gov.uk/waste/household-rubbish/rubbish-collection
+  Used for: bin days, recycling bins and household collections.
+- Winter roads maintenance wording adapted from:
+  https://www.aberdeenshire.gov.uk/roads-and-travel/roads/winter-maintenance
+  Used for: gritting, snow clearing and grit bins.
+- Schools wording adapted from:
+  https://www.aberdeenshire.gov.uk/schools/school-info
+  Used for: school term dates, transport, meals and school places.
+- Live Life Aberdeenshire wording adapted from:
+  https://www.aberdeenshire.gov.uk/live-life-aberdeenshire/
+  Used for: sport, libraries, museums, arts and community services.
+- Formartine House wording adapted from:
+  https://www.aberdeenshire.gov.uk/news/2024/may/new-ellon-office-named-formartine-house
+  Used for: public building and community facility context.
+
+Image sources:
+- Bin lorry image: https://www.aberdeenshire.gov.uk/media/f1mptici/2025-06-bin-lorry.jpg
+  Source page where image is listed: https://www.aberdeenshire.gov.uk/news/2025?page=11
+- Snow blower image: https://www.aberdeenshire.gov.uk/media/aygf1knf/snow-blower.jpg
+  Source page where winter image context is listed: https://www.aberdeenshire.gov.uk/news/2024/oct/gearing-up-to-tackle-the-winter-season-ahead
+- Playground image: https://www.aberdeenshire.gov.uk/media/xjyjizd5/64848_27_08_2029.jpg
+  Source page where general council service context is listed: https://www.aberdeenshire.gov.uk/
+- Live Life Aberdeenshire logo: https://www.aberdeenshire.gov.uk/media/p1yi1d0c/lla_logo_updated.jpg
+  Source page where logo/service is listed: https://www.aberdeenshire.gov.uk/live-life-aberdeenshire/
+- Formartine House construction image: https://www.aberdeenshire.gov.uk/media/rrtfeeeh/formartine-house-under-construction-main-article.jpg
+  Source page where image/article is listed: https://www.aberdeenshire.gov.uk/news/2024/may/new-ellon-office-named-formartine-house
+-->
   <main>
-<!-- Purpose: empty alt text examples that require contextual judgement. -->
-    <h1>Housing and community buildings</h1>
-    <p>This mock page demonstrates that empty alt text is not always a clear pass or fail. Some images may be decorative, while others may communicate useful information.</p>
+    <h1>Council services test page with combined accessibility issues</h1>
+    <p>This mock page deliberately combines several types of poor alt text and weak headings. It is not intended to represent a good public website page. It is designed to stress-test the proof-of-concept AI modules.</p>
+    <p>The content refers to several council service areas so the page contains a mixture of waste, roads, schools, housing and leisure topics.</p>
 
-    <h2>Affordable housing development</h2>
-    <p>New affordable housing can provide modern rental homes for residents and support wider community planning aims.</p>
-    <img src="https://www.aberdeenshire.gov.uk/media/hqrc0hym/affordable-housing-nether-aden-mintlaw-2.jpg" alt="">
+    <h2>Services</h2>
+    <p>Residents may need to check bin days, book recycling centre visits, report missed collections, check road closures, view school term dates or access leisure and cultural services.</p>
+    <p>This heading is deliberately generic and should be flagged because it does not clearly identify the specific topic of the section.</p>
+    <img src="https://www.aberdeenshire.gov.uk/media/f1mptici/2025-06-bin-lorry.jpg" alt="image">
 
-    <h2>New council building progress</h2>
-    <p>Community buildings can bring several services together in one accessible location, including offices, libraries and family support spaces.</p>
+    <h2>Content</h2>
+    <p>Winter roads information may include gritting routes, planned treatments, snow clearing, grit bin locations and emergency arrangements during severe weather.</p>
+    <p>The image below has a filename-like alt value, which should not be treated as a meaningful description.</p>
+    <img src="https://www.aberdeenshire.gov.uk/media/aygf1knf/snow-blower.jpg" alt="snow-blower.jpg">
+
+    <h2>Read more</h2>
+    <p>Schools and learning services may include term dates, school transport changes, school meals, school places, early learning and childcare, parentsportal and support for pupils.</p>
+    <p>The image below has misleading alt text that refers to Council Tax rather than the visible subject of the image.</p>
+    <img src="https://www.aberdeenshire.gov.uk/media/xjyjizd5/64848_27_08_2029.jpg" alt="Council Tax self-service account screen">
+
+    <h2>Overview</h2>
+    <p>Leisure and cultural services can include sport, physical activity, libraries, museums, arts, community halls and other opportunities for learning and wellbeing.</p>
+    <p>The logo below deliberately has no alt attribute. If the logo communicates the service brand, it may need a text alternative.</p>
+    <img src="https://www.aberdeenshire.gov.uk/media/p1yi1d0c/lla_logo_updated.jpg">
+
+    <h2>Project update</h2>
+    <p>New public buildings can support community access to services by combining offices, family support, library space, meeting rooms and accessible facilities in one location.</p>
+    <p>The image below has empty alt text even though the construction image may communicate progress on a public building.</p>
     <img src="https://www.aberdeenshire.gov.uk/media/rrtfeeeh/formartine-house-under-construction-main-article.jpg" alt="">
-
-    <h2>Decorative separator image</h2>
-    <p>The next image is being used as a decorative visual break only. In this context, empty alt text may be acceptable.</p>
-    <img src="https://www.aberdeenshire.gov.uk/media/17236/2009.jpg" alt="">
-
-    <h2>Review required</h2>
-    <p>The AI tool should not automatically fail all empty alt text. It should identify that a human needs to decide whether the image is decorative or informative.</p>
   </main>
 </body>
 </html>

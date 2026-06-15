@@ -2,28 +2,60 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Mock Accessibility Page 03 - High severity missing and misleading alt</title>
+  <title>Mock Accessibility Page 04 - Review decorative and context dependent</title>
 </head>
 <body>
+<!--
+Mock page purpose:
+- Tests empty alt text examples that require judgement.
+- Some images may be informative and should not be empty.
+- One image is presented as decorative, where empty alt text may be acceptable.
+- This page is intended to generate review findings rather than automatic failures.
+
+Wording/source basis:
+- Housing category wording adapted from:
+  https://www.aberdeenshire.gov.uk/all-services
+  Used for: housing repairs, housing portal and homelessness service categories.
+- Affordable housing article wording adapted from:
+  https://www.aberdeenshire.gov.uk/news/2025?page=2
+  Used for: Nether Aden, Mintlaw affordable housing development and new rental properties.
+- Formartine House article wording adapted from:
+  https://www.aberdeenshire.gov.uk/news/2024/may/new-ellon-office-named-formartine-house
+  Used for: new council office, family centre, library, accessibility and Changing Places toilet.
+- Local Development Plan wording adapted from:
+  https://www.aberdeenshire.gov.uk/planning/plans-and-policies/ldp-2023
+  Used for: planning context and development delivery.
+
+Image sources:
+- Affordable housing image: https://www.aberdeenshire.gov.uk/media/hqrc0hym/affordable-housing-nether-aden-mintlaw-2.jpg
+  Source page where image/article is listed: https://www.aberdeenshire.gov.uk/news/2025?page=2
+- Formartine House construction image: https://www.aberdeenshire.gov.uk/media/rrtfeeeh/formartine-house-under-construction-main-article.jpg
+  Source page where image/article is listed: https://www.aberdeenshire.gov.uk/news/2024/may/new-ellon-office-named-formartine-house
+- Decorative visual break image: https://www.aberdeenshire.gov.uk/media/22jprpwh/2025-06-balmedie-beach.jpg
+  Source page where image is listed: https://www.aberdeenshire.gov.uk/news/2025/jun?page=2
+-->
   <main>
-<!-- Purpose: missing alt attributes and misleading alt text. -->
-    <h1>Schools, learning and community facilities</h1>
-    <p>This mock page deliberately includes images with missing or misleading alternative text.</p>
+    <h1>Housing and community buildings</h1>
+    <p>This mock page demonstrates that empty alt text is not always a clear pass or fail. Some images communicate useful information, while others may be decorative depending on the page context.</p>
+    <p>The content is based on common housing, planning and community building themes. The page is designed to make the AI module flag items for human review rather than automatically treating every empty alt attribute as a failure.</p>
 
-    <h2>School activities and wellbeing</h2>
-    <p>School activities can support pupils to build confidence, learn practical skills and take part in wider community projects.</p>
-    <img src="https://www.aberdeenshire.gov.uk/media/mbkjjks2/press-pic-1.jpeg">
+    <h2>Affordable housing development</h2>
+    <p>Affordable housing can provide modern rental homes and support wider community planning aims. Images of completed housing developments may be informative if they show the type, scale or appearance of new homes.</p>
+    <p>The image below has empty alt text. This may be a problem if the image is meant to show the completed housing development to the user.</p>
+    <img src="https://www.aberdeenshire.gov.uk/media/hqrc0hym/affordable-housing-nether-aden-mintlaw-2.jpg" alt="">
 
-    <h2>Play spaces for children</h2>
-    <p>Outdoor play equipment gives pupils opportunities to be active during breaks and helps support health and wellbeing.</p>
-    <img src="https://www.aberdeenshire.gov.uk/media/xjyjizd5/64848_27_08_2029.jpg" alt="Council Tax payment form">
+    <h2>New council building progress</h2>
+    <p>Community buildings can bring services together in one accessible location, such as offices, libraries, family support spaces, registration services and meeting rooms.</p>
+    <p>The image below has empty alt text even though the image may communicate progress on a new public building. A human reviewer should decide whether the image is informative or decorative.</p>
+    <img src="https://www.aberdeenshire.gov.uk/media/rrtfeeeh/formartine-house-under-construction-main-article.jpg" alt="">
 
-    <h2>Libraries and leisure services</h2>
-    <p>Leisure and cultural services include libraries, sport, museums and community activities across Aberdeenshire.</p>
-    <img src="https://www.aberdeenshire.gov.uk/media/p1yi1d0c/lla_logo_updated.jpg" alt="Aerial photograph of a beach">
+    <h2>Decorative visual break</h2>
+    <p>The next image is being used as a decorative separator between sections rather than to communicate service information. In this specific context, empty alt text may be acceptable.</p>
+    <img src="https://www.aberdeenshire.gov.uk/media/22jprpwh/2025-06-balmedie-beach.jpg" alt="">
 
-    <h2>Section</h2>
-    <p>Parents and carers can find information about meals, transport, school places, term dates and support services.</p>
+    <h2>Review required</h2>
+    <p>The AI tool should not automatically fail all empty alt text. It should identify that a human needs to decide whether each image is decorative or informative in context.</p>
+    <p>This heading is deliberately borderline because it describes the test activity rather than a real service topic.</p>
   </main>
 </body>
 </html>

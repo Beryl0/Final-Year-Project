@@ -2,27 +2,53 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Mock Accessibility Page 01 - Low severity mostly good</title>
+  <title>Mock Accessibility Page 02 - Medium severity generic alt and headings</title>
 </head>
 <body>
+<!--
+Mock page purpose:
+- Tests generic alt text values such as "image" and "photo".
+- Tests generic headings such as "Information", "Details" and "Useful links".
+- Content is longer than the first version so heading/content extraction has more page text to process.
+
+Wording/source basis:
+- Winter roads maintenance wording adapted from:
+  https://www.aberdeenshire.gov.uk/roads-and-travel/roads/winter-maintenance
+  Used for: gritting routes, planned treatments, snow clearing, grit bins, school transport and closures.
+- Winter weather update wording adapted from:
+  https://www.aberdeenshire.gov.uk/news/2026/jan/aberdeenshire-winter-weather-updates
+  Used for: low temperatures, ice warnings, gritter deployment, grit bin refilling, flooding and travel caution.
+- Winter season article wording adapted from:
+  https://www.aberdeenshire.gov.uk/news/2024/oct/gearing-up-to-tackle-the-winter-season-ahead
+  Used for: gritters, ploughs, snow blowers, salt, priority roads and emergency response.
+- Household bin collection wording adapted from:
+  https://www.aberdeenshire.gov.uk/waste/household-rubbish/rubbish-collection
+  Used for: weather affecting collections and checking bin days.
+
+Image sources:
+- Snow blower image: https://www.aberdeenshire.gov.uk/media/aygf1knf/snow-blower.jpg
+  Source page where winter image context is listed: https://www.aberdeenshire.gov.uk/news/2024/oct/gearing-up-to-tackle-the-winter-season-ahead
+- Bin lorry image: https://www.aberdeenshire.gov.uk/media/f1mptici/2025-06-bin-lorry.jpg
+  Source page where image is listed: https://www.aberdeenshire.gov.uk/news/2025?page=11
+-->
   <main>
-<!-- Purpose: mostly good examples with one minor heading issue. -->
-    <h1>Household bin collections and recycling</h1>
-    <p>This mock page is based on common council service content. It includes mostly meaningful headings and relevant alt text.</p>
+    <h1>Roads, winter weather and local updates</h1>
+    <p>This mock page contains useful public information but deliberately uses weak headings and poor image descriptions. It is designed to test whether the notebook can identify generic wording that may pass a simple technical check but still be unhelpful.</p>
+    <p>The page covers winter road maintenance, severe weather disruption and household collection updates.</p>
 
-    <h2>Check your household bin collection days</h2>
-    <p>Residents can check when their blue-lid, orange-lid and black refuse bins are due to be collected. Collections normally take place on the same day of the week, with each bin collected on a rotating schedule.</p>
-    <img src="https://www.aberdeenshire.gov.uk/media/f1mptici/2025-06-bin-lorry.jpg" alt="Council bin lorry collecting household waste on a residential street">
+    <h2>Information</h2>
+    <p>During periods of snow, ice or flooding, road teams may prioritise key routes and deploy vehicles such as gritters, ploughs and snow clearing equipment. Drivers should travel to the conditions and check updates before making journeys.</p>
+    <p>Grit bins may need to be restocked when temperatures fall. Residents may also need to report damaged grit bins or check whether a bin is included in the council refill criteria.</p>
+    <img src="https://www.aberdeenshire.gov.uk/media/aygf1knf/snow-blower.jpg" alt="image">
 
-    <h2>Recycling centres and household waste</h2>
-    <p>Recycling centres allow residents to dispose of materials that cannot be placed in household bins. Booking requirements, accepted items and opening times may vary by site.</p>
+    <h2>Details</h2>
+    <p>Severe weather can affect normal council services. Bin collections may be delayed if roads are difficult to access, and residents may be asked to leave bins out or return them to storage depending on the latest service update.</p>
+    <p>This section deliberately uses a generic heading even though the following content is about disruption to waste and recycling services.</p>
+    <img src="https://www.aberdeenshire.gov.uk/media/f1mptici/2025-06-bin-lorry.jpg" alt="photo">
 
-    <h2>More</h2>
-    <p>You can also request an additional recycling bin, report a missed collection or check current service disruptions.</p>
-
-    <h2>Coastal recycling and litter prevention</h2>
-    <p>Visitors and residents are encouraged to use recycling points and litter bins to help protect local beaches and coastal environments.</p>
-    <img src="https://www.aberdeenshire.gov.uk/media/22jprpwh/2025-06-balmedie-beach.jpg" alt="Sandy path through dunes at Balmedie beach">
+    <h2>Useful links</h2>
+    <p>Residents may need to check gritting routes, report road defects, view school transport changes, check road closures or find local grit bin information.</p>
+    <p>This heading is included because it is common on websites but may not clearly describe the topic or purpose of the content underneath it.</p>
   </main>
 </body>
 </html>

@@ -2,24 +2,59 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Mock Accessibility Page 02 - Medium severity generic alt and headings</title>
+  <title>Mock Accessibility Page 03 - High severity missing and misleading alt</title>
 </head>
 <body>
+<!--
+Mock page purpose:
+- Tests missing alt attributes.
+- Tests misleading alt text that exists but does not describe the image.
+- Includes a generic heading to test heading meaningfulness.
+
+Wording/source basis:
+- Schools service wording adapted from:
+  https://www.aberdeenshire.gov.uk/schools/school-info
+  Used for: school term dates, school closures, transport changes, school meals and payments, school places, parentsportal and pupil support.
+- Education contact/service wording adapted from:
+  https://www.aberdeenshire.gov.uk/schools/contact-ecs
+  Used for: term dates, closures, transport, meals, early learning, free school meals and school contact details.
+- Live Life Aberdeenshire wording adapted from:
+  https://www.aberdeenshire.gov.uk/live-life-aberdeenshire/
+  Used for: sport, libraries, museums, arts, community halls and wellbeing.
+- All services page wording adapted from:
+  https://www.aberdeenshire.gov.uk/all-services
+  Used for: council-wide service categories including schools, learning, leisure and council tax.
+
+Image sources:
+- School pupils/activity image: https://www.aberdeenshire.gov.uk/media/mbkjjks2/press-pic-1.jpeg
+  Source page where school activity article is listed: https://www.aberdeenshire.gov.uk/news/2026/jan/wild-cooks
+- Playground image: https://www.aberdeenshire.gov.uk/media/xjyjizd5/64848_27_08_2029.jpg
+  Source page where general council service context is listed: https://www.aberdeenshire.gov.uk/
+- Live Life Aberdeenshire logo: https://www.aberdeenshire.gov.uk/media/p1yi1d0c/lla_logo_updated.jpg
+  Source page where logo/service is listed: https://www.aberdeenshire.gov.uk/live-life-aberdeenshire/
+-->
   <main>
-<!-- Purpose: generic alt text and generic headings that should be flagged for review. -->
-    <h1>Roads, winter weather and local updates</h1>
-    <p>This mock page contains useful public information but uses generic headings and weak image descriptions.</p>
+    <h1>Schools, learning and community facilities</h1>
+    <p>This mock page deliberately includes images with missing or misleading alternative text. The content is based on common school, learning and leisure service themes.</p>
+    <p>The purpose is to show that an image can fail because the alt attribute is missing, but it can also be problematic when alt text exists and is unrelated to the image.</p>
 
-    <h2>Information</h2>
-    <p>During periods of snow and ice, road teams prioritise key routes and may use gritters or snow clearing equipment. Residents should travel carefully and check service updates before making journeys.</p>
-    <img src="https://www.aberdeenshire.gov.uk/media/aygf1knf/snow-blower.jpg" alt="image">
+    <h2>School activities and pupil wellbeing</h2>
+    <p>School activities can support pupils to build confidence, learn practical skills and take part in wider community projects. Schools may also provide information about meals, term dates, transport changes and support for families.</p>
+    <p>This image deliberately has no alt attribute, which should be treated as a high-severity rule-based finding if the image is informative.</p>
+    <img src="https://www.aberdeenshire.gov.uk/media/mbkjjks2/press-pic-1.jpeg">
 
-    <h2>Details</h2>
-    <p>Bin collections can be affected by severe weather. Residents may be asked to leave bins out for collection or return them to their normal storage point depending on the latest update.</p>
-    <img src="https://www.aberdeenshire.gov.uk/media/f1mptici/2025-06-bin-lorry.jpg" alt="photo">
+    <h2>Outdoor play spaces for children</h2>
+    <p>Outdoor play areas give children opportunities to be active, socialise and develop confidence. Play spaces can also support health and wellbeing when they are safe, inclusive and maintained appropriately.</p>
+    <p>The image below deliberately uses misleading alt text. The alt text refers to a Council Tax payment form even though the image is intended to show children using play equipment.</p>
+    <img src="https://www.aberdeenshire.gov.uk/media/xjyjizd5/64848_27_08_2029.jpg" alt="Council Tax payment form">
 
-    <h2>Useful links</h2>
-    <p>Find road closures, check winter maintenance updates, report road defects and view information about grit bins.</p>
+    <h2>Libraries, sport and cultural services</h2>
+    <p>Leisure and cultural services can include sport and physical activity, libraries, museums, arts, community halls and aquarium services. These services support learning, wellbeing and community participation.</p>
+    <p>The image below deliberately uses alt text describing a beach, even though the image is the Live Life Aberdeenshire logo.</p>
+    <img src="https://www.aberdeenshire.gov.uk/media/p1yi1d0c/lla_logo_updated.jpg" alt="Aerial photograph of a beach">
+
+    <h2>Section</h2>
+    <p>Parents and carers may need information about meals, transport, school places, term dates, contact details and pupil support services. This heading is deliberately generic.</p>
   </main>
 </body>
 </html>

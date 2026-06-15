@@ -5,23 +5,54 @@
   <title>Mock Accessibility Page 01 - Low severity mostly good</title>
 </head>
 <body>
+<!--
+Mock page purpose:
+- Mostly good headings and alt text.
+- Keeps one deliberately weak heading: <h2>More</h2>.
+- Keeps the bin lorry false-positive case where the AI captioning model may describe the vehicle incorrectly.
+
+Wording/source basis:
+- Household bin collection wording adapted from Aberdeenshire Council household bin collections page:
+  https://www.aberdeenshire.gov.uk/waste/household-rubbish/rubbish-collection
+  Used for: weekly kerbside service, bins collected on same day of week, blue-lid/orange-lid/black refuse bins, food caddy and battery bags collected weekly, bin reminders.
+- Household bin request and damaged bin wording adapted from:
+  https://www.aberdeenshire.gov.uk/waste/household-rubbish/waste-and-recycling-bins
+  Used for: requesting new/additional bins, reporting damaged bins, delivery time.
+- Recycling centre wording adapted from:
+  https://www.aberdeenshire.gov.uk/waste/recycling/recycling-centres
+  Used for: recycling centres accepting household items and booking requirements.
+
+Image sources:
+- Bin lorry image: https://www.aberdeenshire.gov.uk/media/f1mptici/2025-06-bin-lorry.jpg
+  Source page where image is listed: https://www.aberdeenshire.gov.uk/news/2025?page=11
+- Balmedie beach image: https://www.aberdeenshire.gov.uk/media/22jprpwh/2025-06-balmedie-beach.jpg
+  Source page where image is listed: https://www.aberdeenshire.gov.uk/news/2025/jun?page=2
+-->
   <main>
-<!-- Purpose: mostly good examples with one minor heading issue. -->
     <h1>Household bin collections and recycling</h1>
-    <p>This mock page is based on common council service content. It includes mostly meaningful headings and relevant alt text.</p>
+    <p>This mock page is based on common council waste and recycling information. Most headings are intended to be meaningful, and most images have relevant alternative text.</p>
+    <p>The page is deliberately not a copy of the council website. It uses paraphrased content and council-hosted images so the AI scanner can be tested against realistic local government content.</p>
 
     <h2>Check your household bin collection days</h2>
-    <p>Residents can check when their blue-lid, orange-lid and black refuse bins are due to be collected. Collections normally take place on the same day of the week, with each bin collected on a rotating schedule.</p>
+    <p>Household waste and recycling services normally follow a regular collection pattern. Residents may need to check their bin days, place bins out by the correct time, and use the appropriate container for each type of waste.</p>
+    <p>Blue-lid, orange-lid and black refuse bins are used for different materials, while food caddies and battery bags may be collected separately. Collection reminders can help residents avoid missed collections.</p>
     <img src="https://www.aberdeenshire.gov.uk/media/f1mptici/2025-06-bin-lorry.jpg" alt="Council bin lorry collecting household waste on a residential street">
 
+    <h2>Request bins and report damaged bins</h2>
+    <p>Residents may need to request new bins, additional recycling capacity, food waste caddies or replacement equipment. Damaged bins should be reported so the council can decide whether they should be repaired or replaced.</p>
+    <p>This section is included to provide enough surrounding text for the heading meaningfulness module to compare the heading with the related content.</p>
+
     <h2>Recycling centres and household waste</h2>
-    <p>Recycling centres allow residents to dispose of materials that cannot be placed in household bins. Booking requirements, accepted items and opening times may vary by site.</p>
+    <p>Recycling centres provide a way for households to dispose of items that cannot be placed in normal kerbside bins. Booking rules, accepted materials and site arrangements can vary depending on location and vehicle type.</p>
+    <p>Residents may also use recycling points for specific materials such as glass or textiles, depending on what is available locally.</p>
 
     <h2>More</h2>
-    <p>You can also request an additional recycling bin, report a missed collection or check current service disruptions.</p>
+    <p>You can also report a missed collection, request additional recycling capacity, check service disruptions, or find information about waste that needs special handling.</p>
+    <p>This heading is deliberately weak because it does not clearly describe the topic or purpose of the section.</p>
 
     <h2>Coastal recycling and litter prevention</h2>
-    <p>Visitors and residents are encouraged to use recycling points and litter bins to help protect local beaches and coastal environments.</p>
+    <p>Visitors and residents are encouraged to use bins and recycling points responsibly. Reducing litter helps protect beaches, dunes and local wildlife.</p>
+    <p>This section includes an image with a relevant description so the alt text analysis has a likely positive example.</p>
     <img src="https://www.aberdeenshire.gov.uk/media/22jprpwh/2025-06-balmedie-beach.jpg" alt="Sandy path through dunes at Balmedie beach">
   </main>
 </body>
